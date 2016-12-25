@@ -1,3 +1,5 @@
+import Utility
+
 // AND Gate
 print("-----AND-----")
 print("(0, 0)")
