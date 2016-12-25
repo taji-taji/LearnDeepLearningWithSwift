@@ -5,6 +5,7 @@ let package = Package(
     targets: [
         Target(name: "Gates", dependencies: ["Utility"]),
         Target(name: "Network", dependencies: ["Utility"]),
-        Target(name: "Utility")
+        Target(name: "Utility", dependencies: ["Matrix"]),
+        Target(name: "Matrix")
     ]
 )

@@ -7,7 +7,12 @@
 //
 
 import Foundation
+import Matrix
 
-public func sigmoidFunction(array: [Double]) -> [Double] {
-    return array.map { (x: Double) -> Double in 1 / (1 + exp(-x)) }
+public func sigmoidFunction(vector: Vector) -> Matrix {
+    let array = vector.array.map { (x: Double) -> Double in
+        return 1 / (1 + exp(-x))
+    }
+    let vector = Vector(array)
+    return try! Matrix(vectors: [vector])
 }
