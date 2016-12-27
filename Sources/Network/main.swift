@@ -21,12 +21,12 @@ print(sigmoidFunction(vector: Vector([-1.0, 1.0, 2.0])))
 
 func initNetwork() -> [String : Matrix] {
     let network: [String : Matrix] = [
-        "W1": try! Matrix(vectors: [Vector([0.1, 0.3, 0.5]), Vector([0.2, 0.4, 0.6])]),
-        "b1": try! Matrix(vectors: [Vector([0.1, 0.2, 0.3])]),
-        "W2": try! Matrix(vectors: [Vector([0.1, 0.4]), Vector([0.2, 0.5]), Vector([0.3, 0.6])]),
-        "b2": try! Matrix(vectors: [Vector([0.1, 0.2])]),
-        "W3": try! Matrix(vectors: [Vector([0.1, 0.3]), Vector([0.2, 0.4])]),
-        "b3": try! Matrix(vectors: [Vector([0.1, 0.2])])
+        "W1": try! Matrix(arrays: [[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]]),
+        "b1": try! Matrix(arrays: [[0.1, 0.2, 0.3]]),
+        "W2": try! Matrix(arrays: [[0.1, 0.4], [0.2, 0.5], [0.3, 0.6]]),
+        "b2": try! Matrix(arrays: [[0.1, 0.2]]),
+        "W3": try! Matrix(arrays: [[0.1, 0.3], [0.2, 0.4]]),
+        "b3": try! Matrix(arrays: [[0.1, 0.2]])
     ]
     return network
 }
@@ -50,5 +50,5 @@ func forward(network: [String : Matrix], x: Matrix) -> Matrix {
 
 // Newral Network
 print("-----Newral Network-----")
-let x = try! Matrix(vectors: [Vector([1.0, 0.5])])
+let x = try! Matrix(arrays: [[1.0, 0.5]])
 print(forward(network: initNetwork(), x: x))
