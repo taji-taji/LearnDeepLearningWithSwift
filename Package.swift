@@ -5,7 +5,9 @@ let package = Package(
     targets: [
         Target(name: "Gates", dependencies: ["Utility"]),
         Target(name: "Network", dependencies: ["Utility"]),
-        Target(name: "Utility", dependencies: ["Matrix"]),
-        Target(name: "Matrix")
+        Target(name: "Utility"),
+    ],
+    dependencies: [
+        .Package(url: "https://github.com/taji-taji/MatrixSwift", majorVersion: 0)
     ]
 )
