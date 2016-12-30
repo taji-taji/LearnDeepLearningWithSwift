@@ -1,4 +1,4 @@
-import Utility
+import Functions
 
 // AND Gate
 print("-----AND-----")

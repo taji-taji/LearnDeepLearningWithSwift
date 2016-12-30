@@ -6,7 +6,7 @@
 //
 //
 
-import Utility
+import Functions
 import Matrix
 
 // Step Function
@@ -48,7 +48,26 @@ func forward(network: [String : Matrix], x: Matrix) -> Matrix {
     return y
 }
 
-// Newral Network
-print("-----Newral Network-----")
+// Neural Network
+print("-----Neural Network-----")
 let x = try! Matrix(arrays: [[1.0, 0.5]])
 print(forward(network: initNetwork(), x: x))
+
+
+// Mean Squared Error
+print("-----Mean Squared Error-----")
+// 2が正解
+let t  = [   0,    0,    1,    0,    0,    0,    0,    0,    0,    0] as [Double]
+// 2の確率が一番高い場合
+let y1 = [ 0.1, 0.05,  0.6,  0.0, 0.05,  0.1,  0.0,  0.1,  0.0,  0.0]
+print(meanSquaredError(output: y1, teacher: t)!)
+
+// 7の確率が一番高い場合
+let y2 = [ 0.1, 0.05,  0.1,  0.0, 0.05,  0.1,  0.0,  0.6,  0.0,  0.0]
+print(meanSquaredError(output: y2, teacher: t)!)
+
+
+// Cross Entropy Error
+print("-----Cross Entropy Error-----")
+print(crossEntropyError(output: y1, teacher: t)!)
+print(crossEntropyError(output: y2, teacher: t)!)

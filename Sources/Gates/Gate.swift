@@ -1,4 +1,4 @@
-import Utility
+import Functions
 
 enum GateInput: CustomStringConvertible {
     case zero
