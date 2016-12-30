@@ -39,11 +39,11 @@ func forward(network: [String : Matrix], x: Matrix) -> Matrix {
     let b2 = network["b2"]!
     let b3 = network["b3"]!
     
-    let a1 = try! (x * W1) + b1
+    let a1 = try! (x +* W1) + b1
     let z1 = sigmoidFunction(vector: a1.vectors.first!)
-    let a2 = try! (z1 * W2) + b2
+    let a2 = try! (z1 +* W2) + b2
     let z2 = sigmoidFunction(vector: a2.vectors.first!)
-    let a3 = try! (z2 * W3) + b3
+    let a3 = try! (z2 +* W3) + b3
     let y = a3
     return y
 }
